@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import CityInfoReducer from './cityInfoReducer';
-import SearchHistoryReducer from './searchHistoryReducer';
+import CityInfoReducer from './CityInfo/cityInfoReducer';
+import SearchHistoryReducer from './SearchHistory/searchHistoryReducer';
 
 const rootReducer = combineReducers({
-// add reducers
 cityInfo: CityInfoReducer,
 searchHistory: SearchHistoryReducer,
 });

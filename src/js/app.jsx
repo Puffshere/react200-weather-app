@@ -1,6 +1,6 @@
 import React from 'react';
-import CityInfo from './CityInfo';
-import SearchHistory from './SearchHistory';
+import CityInfo from './CityInfo/CityInfo';
+import SearchHistory from './SearchHistory/SearchHistory';
 
 
 class App extends React.Component {
@@ -31,36 +31,14 @@ class App extends React.Component {
         <br></br>
         <div className="row">
           <div className="col-lg-6">
-            <div className="card">
-              <div className="card-header alert-info">
-                <p>City Information</p>
-              </div>
-                <h5 className="body">
-                  
-                <CityInfo />
-                </h5>
-                
-            </div>
-            </div>
-
-            <div className="col-lg-6">
-            <div className="card">
-              <div className="card-header alert-info">
-                <p>Search History</p>
-              </div>
-                <h5 className="body">
-                  <SearchHistory />
-                </h5>
-                
-            </div>
-            </div>
+            <CityInfo />
           </div>
+          <div className="col-lg-6">
+            <SearchHistory />
+          </div>
+
         </div>
-      
-
-
-
-
+      </div>
 
     );
   }
