@@ -30,10 +30,10 @@ export default class SearchHistory extends React.Component {
         return (
 
             <div className="card">
-                <div className="card-header alert-info">
-                    <p>Search History</p>
+                <div className="card-header cat alert-info">
+                    <p className='high'>Search History</p>
                 </div>
-                <h5 className="body">
+                <h5 className="body">San Diego
                 </h5>
 
             </div>

@@ -38,10 +38,10 @@ export default class CityInfo extends React.Component {
         return (
 
             <div className="card">
-                <div className="card-header alert-info">
-                    <p>City Information</p>
+                <div className="card-header alert-info cat">
+                    <p className='high'>City Information</p>
                 </div>
-                <h5 className="body">
+                <h5 className="body">Tokyo
 
 
                 </h5>
