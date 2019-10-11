@@ -1,27 +1,9 @@
 import React, { Component } from 'react';
 
-import {
-    updateSearchHistorySearchH,
-    addSearchHistory
-} from './searchHistoryActions';
 
-
-export default class SearchHistory extends React.Component {
+export default class SearchHistory extends Component {
     constructor(props) {
         super(props);
-        this.handleSearchHInput = this.handleSearchHInput.bind(this);
-        this.handleAddSearchHistory = this.handleAddSearchHistory.bind(this);
-    }
-
-    handleSearchHInput(event) {
-        const { dispatch } = this.props;
-        const { value } = this.target;
-        dispatch(updateSearchHistorySearchH(value));
-    }
-
-    handleAddSearchHistory() {
-        const { searchH, dispatch } = this.props;
-        dispatch(addSearchHisory(searchH));
     }
 
 
@@ -30,17 +12,27 @@ export default class SearchHistory extends React.Component {
         return (
 
             <div className="card">
-                <div className="card-header cat alert-info">
+                <div className="card-header cat">
                     <p className='high'>Search History</p>
                 </div>
-                <h5 className="body">San Diego
+                <h5 className="body">
+                    <ul className='pl-0 mb-0'>
+                        {
+                            searchH.map((citySearch, index) => (
+                                <div key={index}>
+                                    <li className='d-flex border-top pt-1'>
+                                        <p className='flex-left pl-2'> {citySearch.citySearch} </p>
+                                        <div className='flex-right ml-auto pr-2'>
+                                            <p className='mb-0'> {citySearch.date} </p>
+                                            <p className='mb-1'> {citySearch.time} </p>
+                                        </div>
+                                    </li>
+                                </div>
+                            ))
+                        }
+                    </ul>
                 </h5>
-
             </div>
-
-
-
-
         );
     }
 };

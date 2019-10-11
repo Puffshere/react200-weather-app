@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import CityInfoReducer from './CityInfo/cityInfoReducer';
-import SearchHistoryReducer from './SearchHistory/searchHistoryReducer';
+import searchBarReducer from './SearchBar/searchBarReducer';
 
 const rootReducer = combineReducers({
-cityInfo: CityInfoReducer,
-searchHistory: SearchHistoryReducer,
+    searchBar: searchBarReducer
 });
 
 export default rootReducer;

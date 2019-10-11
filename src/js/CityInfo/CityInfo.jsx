@@ -1,55 +1,51 @@
 import React, { Component } from 'react';
 
-import {
-    updateCityInfoCity,
-    updateCityInfoWeather,
-    addCityInfo
-} from './cityInfoActions';
 
-
-export default class CityInfo extends React.Component {
+class CityInfo extends Component {
     constructor(props) {
         super(props);
-        this.handleCityInput = this.handleCityInput.bind(this);
-        this.handleWeatherInput = this.handleWeatherInput.bind(this);
-        this.handleAddCityInfo = this.handleAddCityInfo.bind(this);
-    }
-
-    handleCityInput(event) {
-        const { dispatch } = this.props;
-        const { value } = this.target;
-        dispatch(updateCityInfoCity(value));
-    }
-
-    handleWeatherInput(event) {
-        const { dispatch } = this.props;
-        const { value } = this.target;
-        dispatch(updateCityInfoWeather(value));
-    }
-
-    handleAddCityInfo() {
-        const { city, weather, dispatch } = this.props;
-        dispatch(addCityInfo(city, weather));
     }
 
 
     render() {
-        const { city, weather } = this.props;
+        const { citySearch, lat, lon, temp, pressure, humidity, temp_min, temp_max, wind } = this.props;
         return (
-
             <div className="card">
-                <div className="card-header alert-info cat">
+                <div className="card-header cat">
                     <p className='high'>City Information</p>
                 </div>
-                <h5 className="body">Tokyo
-
+                <h5 className="body">
+                    <div className='row'>
+                        <h3 className='col-12'>{citySearch}</h3>
+                        <p className='col-12 snake'> Lat/Long: {lat}, {lon} </p>
+                    </div>
+                    <hr></hr>
+                    <br></br>
+                    <div className='row'>
+                        <h6 className='col-4'> Temperature (F) </h6>
+                        <h6 className='col-4'> Pressure </h6>
+                        <h6 className='col-4'> Humidity </h6>
+                    </div>
+                    <div className='row text-success'>
+                        <h6 className='col-4'>{temp}</h6>
+                        <h6 className='col-4'>{pressure}</h6>
+                        <h6 className='col-4'>{humidity}</h6>
+                    </div>
+                    <div className='row'>
+                        <h6 className='col-4'> Lowest Temp (F) </h6>
+                        <h6 className='col-4'> Highest Temp (F) </h6>
+                        <h6 className='col-4'> Wind Speed </h6>
+                    </div>
+                    <div className='row'>
+                        <h6 className='col-4'>{temp_min}</h6>
+                        <h6 className='col-4'>{temp_max}</h6>
+                        <h6 className='col-4'>{wind}</h6>
+                    </div>
 
                 </h5>
-
             </div>
-
-
         );
-
     }
-};
+}
+
+export default CityInfo;

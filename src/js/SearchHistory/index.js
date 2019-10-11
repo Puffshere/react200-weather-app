@@ -4,9 +4,8 @@ import SearchHistory from './SearchHistory';
 
 function mapStoreToProps(store) {
   return {
-    city: store.cityInfo.city,
-    weather: store.cityInfo.weather,
+    searchH: store.searchBar.searchH,
   };
 }
 
-export default connect(mapStoreToProps)(CityInfo);
+export default connect(mapStoreToProps)(SearchHistory);
