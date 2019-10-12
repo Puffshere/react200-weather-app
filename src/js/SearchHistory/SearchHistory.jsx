@@ -18,13 +18,13 @@ export default class SearchHistory extends Component {
                 <h5 className="body">
                     <ul className='pl-0 mb-0'>
                         {
-                            searchH.map((citySearch, index) => (
+                            searchH.map((searchedItem, index) => (
                                 <div key={index}>
                                     <li className='d-flex border-top pt-1'>
-                                        <p className='flex-left pl-2'> {citySearch.citySearch} </p>
+                                        <p className='flex-left pl-2'> {searchedItem.searchedItem} </p>
                                         <div className='flex-right ml-auto pr-2'>
-                                            <p className='mb-0'> {citySearch.date} </p>
-                                            <p className='mb-1'> {citySearch.time} </p>
+                                            <p className='mb-0'> {searchedItem.date} </p>
+                                            <p className='mb-1'> {searchedItem.time} </p>
                                         </div>
                                     </li>
                                 </div>

@@ -1,6 +1,6 @@
 const defaultState = {
-    citySearch: '',
-    city: '',
+    // citySearch: '',
+    town: '',
     lat: '',
     lon: '',
     temp: '',
@@ -15,12 +15,14 @@ const defaultState = {
 export default function searchBarReducer(state = defaultState, action) {
     const { type, payload } = action;
 
+
     switch (type) {
         case 'GET_WEATHER_FULFILLED': {
             return {
                 ...state,
-                cityData: payload.data,
-                citySearch: payload.data.name,
+                // cityData: payload.data,
+                searchedItem: '',
+                town: payload.data.name,
                 lat: payload.data.coord.lat,
                 lon: payload.data.coord.lon,
                 temp: payload.data.main.temp,
@@ -32,7 +34,7 @@ export default function searchBarReducer(state = defaultState, action) {
                 searchH: [
                     ...state.searchH,
                     {
-                        citySearch: payload.data.name,
+                        searchedItem: payload.data.name,
                         date: new Date().toLocaleDateString(),
                         time: new Date().toLocaleTimeString()
                     }
@@ -42,7 +44,7 @@ export default function searchBarReducer(state = defaultState, action) {
         case 'CITY': {
             return {
                 ...state,
-                citySearch: payload.citySearch
+                searchedItem: payload.searchedItem
             }
         }
         default: {

@@ -1,15 +1,15 @@
 const axios = require('axios');
 
 
-export function getWeather(citySearch) {
+export function getWeather(searchedItem) {
     return {
         type: 'GET_WEATHER',
-        payload: axios.get(`/SearchBar/${citySearch}`),
+        payload: axios.get(`/SearchBar/${searchedItem}`),
     }
 }
-export function City(citySearch) {
+export function City(searchedItem) {
     return {
         type: 'CITY',
-        payload: { citySearch },
+        payload: { searchedItem },
     }
 }

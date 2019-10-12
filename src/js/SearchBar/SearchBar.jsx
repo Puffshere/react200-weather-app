@@ -10,7 +10,7 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            citySearch: ''
+            searchedItem: ''
         }
 
         this.handleCityInput = this.handleCityInput.bind(this);
@@ -26,18 +26,16 @@ class SearchBar extends Component {
     handleSearch(e) {
         e.preventDefault()
         const { dispatch } = this.props;
-        const { citySearch } = this.props;
-        dispatch(getWeather(citySearch));
-        this.setState({ citySearch: '' });
+        const { searchedItem } = this.props;
+        dispatch(getWeather(searchedItem));
     }
 
 
 
     render() {
-        const { citySearch } = this.props;
+        const { searchedItem } = this.props;
 
 
-        console.log(citySearch);
         return (
             < div id='shane'>
                 <div className='btn-group' role='group' aria-label='Basic example'>
@@ -48,9 +46,9 @@ class SearchBar extends Component {
                     <button id='tokyo' onClick={this.handleCityInput} value='Tokyo' type='radio' name='cities' className='btn btn-primary'>Tokyo</button>
                 </div>
                 <div className='input-group'>
-                    <input type='text' className='form-control' placeholder='' value={citySearch} onChange={this.handleCityInput}></input>
+                    <input type='text' className='form-control' placeholder='' value={searchedItem} onChange={this.handleCityInput}></input>
                     <div className='input-group-append'>
-                        <button className='btn btn-outline-secondary text-white' type='button' onClick={this.handleSearch} onChange={this.state.citySearch}>Go!</button>
+                        <button className='btn btn-outline-secondary text-white' type='button' value={this.state.searchedItem} onClick={this.handleSearch}>Go!</button>
                     </div>
                 </div>
             </div>

@@ -5,10 +5,11 @@ class CityInfo extends Component {
     constructor(props) {
         super(props);
     }
-
-
+    
+    
     render() {
-        const { citySearch, lat, lon, temp, pressure, humidity, temp_min, temp_max, wind } = this.props;
+        const { town, lat, lon, temp, pressure, humidity, temp_min, temp_max, wind } = this.props;
+        console.log(town);
         return (
             <div className="card">
                 <div className="card-header cat">
@@ -16,7 +17,7 @@ class CityInfo extends Component {
                 </div>
                 <h5 className="body">
                     <div className='row'>
-                        <h3 className='col-12'>{citySearch}</h3>
+                        <h3 className='col-12'>{town}</h3>
                         <p className='col-12 snake'> Lat/Long: {lat}, {lon} </p>
                     </div>
                     <hr></hr>
